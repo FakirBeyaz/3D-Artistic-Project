@@ -1,0 +1,303 @@
+body {
+    font-family: "Poppins", sans-serif;
+}
+
+.header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    margin: 50px calc(5%);
+}
+
+.header h1 {
+    text-transform: capitalize;
+}
+
+.header img {
+    height: 1.5rem;
+    width: 1.5rem;
+}
+
+.header img:hover {
+    cursor: pointer;
+}
+
+.header .links {
+    width: 350px;
+    display: flex;
+    justify-content: space-between;
+}
+
+.header .links a {
+    text-decoration: none;
+    color: black;
+}
+
+.mobilenavbar > * {
+    margin: 20px;
+}
+.mobilenavbar{
+    width: 120px;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    position: absolute;
+    right: 0;
+    z-index: 2;
+    display: none;
+}
+
+.mobilenavbarclicked{
+    display: block;
+    width: 80px;
+    height: 100vh;
+    background-color: white;
+    display: flex;
+    flex-direction: column;
+    justify-content:center;
+    align-items: center;
+    position: fixed;
+    right: 0;
+    top: 0;
+    z-index: 2;
+    padding: 16px;
+}
+
+.mobilenavbar a {
+    text-decoration: none;
+    color: black;
+}
+
+.mobilenavbar img{
+    width: 24px;
+    height: 24px;
+}
+
+.header .hamburger {
+    display: none;
+    z-index: 3;
+}
+
+.bar1, .bar2, .bar3 {
+    height: 5px;
+    background-color: black;
+    width: 50px;
+    border-radius: 4px;
+    
+
+}
+
+.animatedbar1 {
+    animation: firstrotate 1s forwards;
+}
+
+.animatedbar2 {
+    animation: fadebar 1s forwards;
+}
+
+.animatedbar3 {
+    animation: secondrotate 1s forwards;
+}
+
+.projects-container {
+    display: grid;
+    grid-template-areas:
+        "a a b"
+        "a a c"
+        "d e c"
+        "d e c"
+        "d e c"
+        "f g g"
+        "f g g"
+        "f g g"
+        "h h i"
+        "h h i";
+    max-width: 100%;
+    grid-gap: 16px;
+    justify-content: center;
+    margin: 0 5%;
+}
+
+.project {
+    position: relative;
+}
+
+.project img {
+    object-fit: cover;
+    height: 100%;
+    width: 100%;
+}
+
+.project p:hover {
+    cursor: pointer;
+    opacity: 1;
+}
+
+.project p {
+    text-transform: uppercase;
+    color: black;
+    font-weight: bold;
+    font-size: 2rem;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 1;
+    opacity: 0;
+    width: 100%;
+    height: 100%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+#astro p {
+    color: white;
+}
+
+#insta p {
+    color: white;
+}
+
+#dimensional p {
+    color: white;
+}
+
+#eth {
+    grid-area: a;
+    background-color: aqua;
+}
+
+#alphabet {
+    grid-area: b;
+}
+
+#traveler {
+    grid-area: c;
+}
+
+#astro {
+    grid-area: d;
+}
+
+#cube {
+    grid-area: e;
+}
+
+#cup {
+    grid-area: f;
+}
+
+#insta {
+    grid-area: g;
+}
+
+#foam {
+    grid-area: h;
+}
+
+#dimensional {
+    grid-area: i;
+}
+
+.footer {
+    margin: 0 auto;
+    text-align: center;
+    padding: 50px;
+    height: 6%;
+}
+
+@media screen and (max-width:1000px) {
+    .projects-container {
+        grid-template-areas:
+            "a a"
+            "a a"
+            "b c"
+            "d e"
+            "d e"
+            "g g"
+            "g g"
+            "f h"
+            "i i"
+            "i i";
+    }
+
+}
+
+@media screen and (max-width:700px) {
+    .projects-container {
+        grid-template-areas:
+            "a a"
+            "b b"
+            "c c"
+            "d e"
+            "g g"
+            "g g"
+            "f h"
+            "i i"
+            "i i";
+        margin: 10px 5px;
+    }
+
+    .project p {
+        font-size: 1.5rem;
+    }
+
+    .header {
+        margin: 0px;
+        padding: 0 10px;
+        background-color: white;
+        position: fixed;
+        top: 0;
+        z-index: 3;
+        width: 100%;
+    }
+
+    .header .links {
+        display: none;
+    }
+
+    .header .hamburger {
+        display: flex;
+        flex-direction: column;
+        justify-content: space-between;
+        height: 2rem;
+        padding: 0 50px;
+    }
+
+}
+
+@keyframes fadebar {
+    from {
+        transform: scaleX(1);
+        opacity: 1;
+    }
+
+    to {
+        transform: scaleX(0);
+        opacity: 0;
+    }
+}
+
+@keyframes firstrotate {
+    from {
+        transform: rotate(0deg) translateY(0);
+    }
+
+    to {
+        transform: rotate(45deg) translateY(18px);
+    }
+}
+
+@keyframes secondrotate {
+    from {
+        transform: rotate(0deg) translateY(0);
+    }
+
+    to {
+        transform: rotate(-45deg) translateY(-18px);
+    }
+}
+
